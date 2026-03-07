@@ -14,6 +14,6 @@ public interface Ports {
     }
 
     public interface Superstructure {
-        int MOTOR = 67;
+        int MOTOR = 3;
     }
 }

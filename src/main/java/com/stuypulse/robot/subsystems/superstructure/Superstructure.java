@@ -1,9 +1,11 @@
 package com.stuypulse.robot.subsystems.superstructure;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import com.stuypulse.robot.constants.Settings;
+
 
 public abstract class Superstructure extends SubsystemBase {
-    private static final Superstructure instance; // this
+    private static final Superstructure instance;
 
     static {
         // if (Robot.isReal()) {
@@ -19,9 +21,10 @@ public abstract class Superstructure extends SubsystemBase {
 
     public enum SuperstructureState { 
         IDLE(0),
-        SHOOTING(1000), // intaking as well?
-        FERRYING(2000); // outtaking as well?
-
+        SHOOTING(Settings.Superstructure.SHOOT_SPEED), 
+        INTAKING(Settings.Superstructure.INTAKE_SPEED),
+        OUTTAKING(Settings.Superstructure.OUTTAKE_SPEED);
+        
         private double RPM;
 
         private SuperstructureState(double RPM) {
