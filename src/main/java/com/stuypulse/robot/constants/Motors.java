@@ -34,6 +34,20 @@ public interface Motors {
 
     /** Classes to store all of the values a motor needs */
 
+    public interface IntakeMotors {
+        TalonFXConfig PIVOT_CONFIG = new TalonFXConfig()
+            .withCurrentLimitAmps(50)
+            .withInvertedValue(InvertedValue.CounterClockwise_Positive)
+            .withNeutralMode(NeutralModeValue.Brake)
+            .withPIDConstants(Gains.Intake.kP, Gains.Intake.kI, Gains.Intake.kD, 0);
+        
+        TalonFXConfig ROLLER_CONFIG = new TalonFXConfig() 
+            .withCurrentLimitAmps(50)
+            .withInvertedValue(InvertedValue.Clockwise_Positive) 
+            .withNeutralMode(NeutralModeValue.Brake);
+        
+    }
+
     public static class TalonFXConfig {
         private final TalonFXConfiguration configuration = new TalonFXConfiguration();
         private final Slot0Configs slot0Configs = new Slot0Configs();
