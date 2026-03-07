@@ -34,17 +34,12 @@ public interface Motors {
 
     /** Classes to store all of the values a motor needs */
 
-    public interface IntakeMotors {
-        TalonFXConfig PIVOT_CONFIG = new TalonFXConfig()
-            .withCurrentLimitAmps(50)
-            .withInvertedValue(InvertedValue.CounterClockwise_Positive)
-            .withNeutralMode(NeutralModeValue.Brake)
-            .withPIDConstants(Gains.Intake.kP, Gains.Intake.kI, Gains.Intake.kD, 0);
-        
-        TalonFXConfig ROLLER_CONFIG = new TalonFXConfig() 
+    public interface SuperstructureMotors {
+        TalonFXConfig SUPERSTRUCTURE_MOTOR = new TalonFXConfig() 
             .withCurrentLimitAmps(50)
             .withInvertedValue(InvertedValue.Clockwise_Positive) 
-            .withNeutralMode(NeutralModeValue.Brake);
+            .withNeutralMode(NeutralModeValue.Brake)
+            .withPIDConstants(0, 0, 0, 0);
         
     }
 

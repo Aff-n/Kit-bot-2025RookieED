@@ -17,13 +17,7 @@ import edu.wpi.first.math.geometry.Rotation2d;
  * values that we can edit on Shuffleboard.
  */
 public interface Settings {
-    public interface Intake{
-
-        Rotation2d Idle_Angle = Rotation2d.fromDegrees(6.7);//change all of these later
-        Rotation2d Intake_Angle = Rotation2d.fromDegrees(1.1);
-        Rotation2d Out_Angle = Rotation2d.fromDegrees(1);
-        Rotation2d Up_Angle = Rotation2d.fromDegrees(1);
-        Rotation2d Down_Angle = Rotation2d.fromDegrees(1);
+    public interface EnabledSubsystems {
+        SmartBoolean Superstructure = new SmartBoolean("EnabledSubsystems/Superstructure", true);
     }
-
 }
