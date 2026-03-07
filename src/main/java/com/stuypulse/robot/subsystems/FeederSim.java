@@ -2,6 +2,7 @@ package com.stuypulse.robot.subsystems;
 
 import com.stuypulse.robot.constants.Gains;
 import com.stuypulse.robot.constants.Settings;
+import com.stuypulse.robot.subsystems.feeder.Feeder;
 import com.stuypulse.stuylib.control.feedback.PIDController;
 
 import edu.wpi.first.math.controller.SimpleMotorFeedforward;

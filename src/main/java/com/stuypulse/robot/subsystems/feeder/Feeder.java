@@ -23,8 +23,8 @@ public abstract class Feeder extends SubsystemBase {
 
     public enum FeederState {
         IDLE(0),
-        INTAKE(Settings.Feeder.FEEDER_INTAKE),
-        SHOOT(Settings.Feeder.FEEDER_SHOOT);
+        INTAKE(Settings.Feeder.FEEDER_FORWARD),
+        SHOOT(Settings.Feeder.FEEDER_REVERSE);
         
         private double targetDutyCycle;
 

@@ -15,8 +15,11 @@ import com.stuypulse.stuylib.network.SmartNumber;
  * values that we can edit on Shuffleboard.
  */
 public interface Settings {
+
+    double DT = 0.02;
+
     public interface Feeder {
-        double FEEDER_REVERSE = 0.1; //TODO: find ts
-        double FEEDER_FORWARD = 0.1;
+        double FEEDER_FORWARD = 10;
+        double FEEDER_REVERSE = -10; 
     }
 }
