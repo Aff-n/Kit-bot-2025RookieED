@@ -16,7 +16,7 @@ import com.stuypulse.stuylib.network.SmartNumber;
  */
 public interface Settings {
     public interface Feeder {
-        double FEEDER_REVERSE = 0.1; //TODO: find ts
-        double FEEDER_FORWARD = 0.1;
+        double FEEDER_INTAKE = 0.1;
+        double FEEDER_SHOOT = -0.1;
     }
 }

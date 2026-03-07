@@ -1,13 +1,12 @@
-package com.stuypulse.robot.subsystems;
+package com.stuypulse.robot.subsystems.feeder;
 
-import com.ctre.phoenix6.hardware.TalonFX;
 import com.stuypulse.robot.Robot;
 import com.stuypulse.robot.constants.Settings;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-public class Feeder extends SubsystemBase{
-    private static Feeder instance;
+public abstract class Feeder extends SubsystemBase {
+    private static final Feeder instance;
     private FeederState state;
 
     static {
@@ -18,23 +17,23 @@ public class Feeder extends SubsystemBase{
         }
     }
 
-    private static Feeder getInstance(){
+    public static Feeder getInstance() {
         return instance;
     }
-    
-    public enum FeederState{
-        IDLE(0),
-        REVERSE(Settings.Feeder.FEEDER_REVERSE),
-        FORWARD(Settings.Feeder.FEEDER_FORWARD);
-        
-        private double TargetRPM;
 
-        private FeederState(double TargetRPM){
-            this.TargetRPM=TargetRPM;
+    public enum FeederState {
+        IDLE(0),
+        INTAKE(Settings.Feeder.FEEDER_INTAKE),
+        SHOOT(Settings.Feeder.FEEDER_SHOOT);
+        
+        private double targetDutyCycle;
+
+        private FeederState(double targetDutyCycle) {
+            this.targetDutyCycle = targetDutyCycle;
         }
 
-        private double getTargetRPM(){
-            return this.TargetRPM;
+        public double getDutyCycle() {
+            return this.targetDutyCycle;
         }
     }
 
@@ -42,11 +41,11 @@ public class Feeder extends SubsystemBase{
         this.state = FeederState.IDLE;
     }
 
-    private FeederState getState(){
+    public FeederState getState() {
         return state;
     }
     
-    private void setState(FeederState state){
+    public void setState(FeederState state) {
         this.state = state;
     }
     
