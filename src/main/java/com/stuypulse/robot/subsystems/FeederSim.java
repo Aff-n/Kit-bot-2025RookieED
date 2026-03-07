@@ -1,13 +1,21 @@
 package com.stuypulse.robot.subsystems;
 
+import com.stuypulse.robot.constants.Gains;
 import com.stuypulse.robot.constants.Settings;
+import com.stuypulse.stuylib.control.feedback.PIDController;
+
+import edu.wpi.first.math.controller.SimpleMotorFeedforward;
 import edu.wpi.first.math.system.plant.DCMotor;
 import edu.wpi.first.math.system.plant.LinearSystemId;
+import edu.wpi.first.wpilibj.simulation.DCMotorSim;
 import edu.wpi.first.wpilibj.simulation.FlywheelSim;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class FeederSim extends Feeder{
     
-    private FlywheelSim feeder; 
+    private FlywheelSim feeder;
+    private SimpleMotorFeedforward feedForward;
+    private PIDController controller;
 
     public FeederSim(){
         super();
@@ -25,6 +33,8 @@ public class FeederSim extends Feeder{
     @Override
     public void periodic(){
         super.periodic();
+
+        
         feeder.update(Settings.DT);
     }
 }

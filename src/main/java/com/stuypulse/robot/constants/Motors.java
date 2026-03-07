@@ -20,6 +20,7 @@ import com.ctre.phoenix6.signals.FeedbackSensorSourceValue;
 import com.ctre.phoenix6.signals.GravityTypeValue;
 import com.ctre.phoenix6.signals.InvertedValue;
 import com.ctre.phoenix6.signals.NeutralModeValue;
+import com.revrobotics.spark.config.SparkBaseConfig;
 import com.revrobotics.spark.config.SparkMaxConfig;
 
 /*-
@@ -32,10 +33,9 @@ import com.revrobotics.spark.config.SparkMaxConfig;
  *  - The Open Loop Ramp Rate
  */
 public interface Motors {
-    public interface Feeder{
-        SparkMaxConfig MOTOR_CONFIG_1 = new SparkMaxConfig();
+public interface Feeder{
+        SparkBaseConfig MOTOR_CONFIG = new SparkMaxConfig();
     }
-
     /** Classes to store all of the values a motor needs */
 
     public static class TalonFXConfig {
