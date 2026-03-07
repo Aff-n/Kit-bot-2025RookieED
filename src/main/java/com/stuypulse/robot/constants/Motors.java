@@ -20,6 +20,7 @@ import com.ctre.phoenix6.signals.FeedbackSensorSourceValue;
 import com.ctre.phoenix6.signals.GravityTypeValue;
 import com.ctre.phoenix6.signals.InvertedValue;
 import com.ctre.phoenix6.signals.NeutralModeValue;
+import com.revrobotics.spark.config.SparkMaxConfig;
 
 /*-
  * File containing all of the configurations that different motors require.
@@ -31,6 +32,9 @@ import com.ctre.phoenix6.signals.NeutralModeValue;
  *  - The Open Loop Ramp Rate
  */
 public interface Motors {
+    public interface Feeder{
+        SparkMaxConfig MOTOR_CONFIG_1 = new SparkMaxConfig();
+    }
 
     /** Classes to store all of the values a motor needs */
 
