@@ -1,13 +1,13 @@
 package com.stuypulse.robot.constants;
 
 import com.pathplanner.lib.config.PIDConstants;
-import com.stuypulse.stuylib.network.SmartBoolean;
+// import com.stuypulse.stuylib.network.SmartBoolean;
 
 public class Gains {
-    public interface Supersystem {
-        double kP = 0.9;
-        double kI = 0;
-        double kD = 0;
+    public interface Superstructure {
+        double kP = 1;
+        double kI = 2;
+        double kD = 3;
 
         double kS = 0;
         double kV = 0;

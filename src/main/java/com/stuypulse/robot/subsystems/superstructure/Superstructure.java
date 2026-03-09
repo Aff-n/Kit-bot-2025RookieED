@@ -1,6 +1,7 @@
 package com.stuypulse.robot.subsystems.superstructure;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import com.stuypulse.robot.Robot;
 import com.stuypulse.robot.constants.Settings;
 
 
@@ -8,11 +9,11 @@ public abstract class Superstructure extends SubsystemBase {
     private static final Superstructure instance;
 
     static {
-        // if (Robot.isReal()) {
+         if (Robot.isReal()) {
         instance = new SuperstructureImpl();
-        // } else {
-        //     instance = new SuperstructureSim();
-        // }
+         } else {
+             instance = new SuperstructureSim();
+        }
     }
 
     public static Superstructure getInstance() {
@@ -35,7 +36,7 @@ public abstract class Superstructure extends SubsystemBase {
             return RPM;
         }
     }
-
+    
     public SuperstructureState state;
 
     protected Superstructure() {
