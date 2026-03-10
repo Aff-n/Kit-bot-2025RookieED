@@ -27,5 +27,6 @@ public class FeederImpl extends Feeder {
     @Override
     public void periodic() {
         super.periodic();
+        setMotors();
     }
 }
